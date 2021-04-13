@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "devDebug": "react-native run-android --variant=devDebug",
+    "prodDebug": "react-native run-android --variant=prodDebug",
+    "devRelease": "npx jetify && cd android && gradlew clean && gradlew assembleDevRelease",
+    "prodRelease": "npx jetify && cd android && gradlew clean && gradlew assembleProdRelease",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
