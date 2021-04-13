@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SafeAreaView, Text } from 'react-native';
-import config from 'react-native-config';
+import SplashScreen from 'react-native-splash-screen';
 
-const App = () => (
-  <SafeAreaView>
-    <Text>Initial setup</Text>
-    <Text>{config.API_BASE_URL}</Text>
-  </SafeAreaView>
-);
+const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
+  return (
+    <SafeAreaView>
+      <Text>Initial setup</Text>
+    </SafeAreaView>
+  );
+};
 
 export default App;
