@@ -5,8 +5,9 @@
   "scripts": {
     "devDebug": "react-native run-android --variant=devDebug",
     "prodDebug": "react-native run-android --variant=prodDebug",
-    "devRelease": "npx jetify && cd android && gradlew clean && gradlew assembleDevRelease",
-    "prodRelease": "npx jetify && cd android && gradlew clean && gradlew assembleProdRelease",
+    "devRelease": "npx jetify && cd android && gradlew clean && gradlew assembleDevRelease && cd ..",
+    "prodRelease": "npx jetify && cd android && gradlew clean && gradlew assembleProdRelease && cd ..",
+    "prodBundle": "npx jetify && cd android && gradlew clean && gradlew bundleProdRelease && cd ..",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
