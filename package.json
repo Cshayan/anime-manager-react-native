@@ -63,6 +63,6 @@
     }
   },
   "lint-staged": {
-    "*.js": "npm run precommit"
+    "*.js": "npm run precommit && npm run prepush"
   }
 }
