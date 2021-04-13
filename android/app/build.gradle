@@ -106,12 +106,13 @@ android {
             applicationId 'com.animemanager'
             targetSdkVersion rootProject.ext.targetSdkVersion
             resValue "string", "build_config_package", "com.animemanager"
+            resValue "string", "app_name", "DevAnimeManager"
         }
         prod {
             minSdkVersion rootProject.ext.minSdkVersion
             applicationId 'com.weathernow'
             targetSdkVersion rootProject.ext.targetSdkVersion
-            resValue "string", "build_config_package", "com.animemanager"
+            resValue "string", "app_name", "AnimeManager"
         }
     }
 
