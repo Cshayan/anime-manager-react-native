@@ -1,45 +1,62 @@
 import React from 'react';
-import { Image, View, Text, TouchableOpacity } from 'react-native';
-
+import PropTypes from 'prop-types';
+import { Image, View, StyleSheet } from 'react-native';
+import { CommonActions } from '@react-navigation/native';
+import { Button, Text } from '../../components';
+import { adjust } from '../../components/text/adjust';
 import { images } from './images';
 
-const GetStarted = () => (
-  <View style={{ flex: 1 }}>
-    <Image
-      source={images.getStartedImg}
-      style={{
-        width: '100%',
-        height: '60%',
-        borderBottomLeftRadius: 55,
-        borderBottomRightRadius: 55,
-      }}
-    />
-    <View
-      style={{ marginTop: 20, alignItems: 'center', justifyContent: 'center' }}
-    >
-      <Text style={{ fontSize: 26, fontWeight: 'bold', color: '#111' }}>
-        Anime Manager
-      </Text>
-      <Text style={{ fontSize: 16, color: '#111' }}>
-        One place to manage all your favourite animes
-      </Text>
-      <TouchableOpacity
-        style={{
-          marginTop: 40,
-          backgroundColor: '#54A0FF',
-          width: '70%',
-          padding: 15,
-          borderRadius: 15,
-        }}
-      >
-        <View>
-          <Text style={{ textAlign: 'center', color: '#fff', fontSize: 18 }}>
-            Get Started
-          </Text>
+const GetStarted = (props) => {
+  const { navigation } = props;
+  const handleGetStartedPress = () => {
+    const resetAction = CommonActions.reset({
+      index: 0,
+      routes: [
+        {
+          name: 'Login',
+        },
+      ],
+    });
+    navigation.dispatch(resetAction);
+  };
+
+  return (
+    <View style={{ flex: 1 }}>
+      <Image source={images.getStartedImg} style={styles.imgCover} />
+      <View style={styles.container}>
+        <Text size={26} fontWeight="bold">
+          Anime Manager
+        </Text>
+        <Text size={14}>One place to manage all your favourite animes</Text>
+        <View style={styles.btnContainer}>
+          <Button label="Get Started" onPress={() => handleGetStartedPress()} />
         </View>
-      </TouchableOpacity>
+      </View>
     </View>
-  </View>
-);
+  );
+};
+
+const styles = StyleSheet.create({
+  imgCover: {
+    width: '100%',
+    height: '60%',
+    borderBottomLeftRadius: adjust(55),
+    borderBottomRightRadius: adjust(55),
+  },
+  container: {
+    marginTop: adjust(20),
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: adjust(5),
+  },
+  btnContainer: {
+    marginTop: adjust(40),
+    width: '90%',
+  },
+});
+
+GetStarted.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
 
 export default GetStarted;

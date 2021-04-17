@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import App from '../containers/app';
 import Onboard from '../containers/auth';
 import AppDrawer from '../components/drawer';
+import Login from '../containers/auth/login/login';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ const AnimeManagerScreens = () => (
       <Stack.Screen name="App" component={App} />
       <Stack.Screen name="Drawer" component={AppDrawer} />
       <Stack.Screen name="Onboard" component={Onboard} />
+      <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>
   </NavigationContainer>
 );
