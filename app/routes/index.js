@@ -22,7 +22,7 @@ const AnimeManagerScreens = () => (
       screenOptions={{ header: () => null }}
     >
       <Stack.Screen name="App" component={App} />
-      <Stack.Screen name="Drawer" component={AppDrawer} />
+      <Stack.Screen name="Home" component={AppDrawer} />
       <Stack.Screen name="Onboard" component={Onboard} />
       <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>

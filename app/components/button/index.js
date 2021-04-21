@@ -4,17 +4,26 @@ import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { adjust } from '../text/adjust';
 
 const Button = (props) => {
-  const { label, onPress, disabled, ...rest } = props;
+  const { label, onPress, disabled, isLoading, ...rest } = props;
   return (
     <TouchableOpacity
       {...rest}
-      disabled={disabled}
+      disabled={disabled || isLoading}
       onPress={() => onPress()}
-      style={[styles.buttonTouch, disabled && styles.disabledTouch]}
+      style={[
+        styles.buttonTouch,
+        (disabled || isLoading) && styles.disabledTouch,
+      ]}
     >
-      <View>
-        <Text style={styles.labelText}>{label}</Text>
-      </View>
+      {!isLoading ? (
+        <View>
+          <Text style={styles.labelText}>{label}</Text>
+        </View>
+      ) : (
+        <View>
+          <Text style={styles.labelText}>Loading...</Text>
+        </View>
+      )}
     </TouchableOpacity>
   );
 };
@@ -23,10 +32,12 @@ Button.propTypes = {
   label: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
+  isLoading: PropTypes.bool,
 };
 
 Button.defaultProps = {
   disabled: false,
+  isLoading: false,
 };
 
 const styles = StyleSheet.create({
