@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 import { Icon, Text } from '..';
+import { colors } from '../../constants/colors';
 import { adjust } from '../text/adjust';
 import { images } from './images';
 
@@ -96,14 +97,14 @@ const Drawer = () => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F4F3FA',
+    backgroundColor: colors.primaryBackgroundWhite,
     flexDirection: 'column',
     justifyContent: 'space-between',
   },
   listItemContainer: {
     flexDirection: 'row',
     marginVertical: adjust(12),
-    marginHorizontal: adjust(5),
+    marginHorizontal: adjust(10),
   },
   labelStyle: {
     marginLeft: adjust(10),

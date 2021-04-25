@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { adjust } from '../text/adjust';
+import { colors } from '../../constants/colors';
 
 const Button = (props) => {
   const { label, onPress, disabled, isLoading, ...rest } = props;
@@ -42,14 +43,14 @@ Button.defaultProps = {
 
 const styles = StyleSheet.create({
   buttonTouch: {
-    backgroundColor: '#54A0FF',
+    backgroundColor: colors.primaryLightBlue,
     width: '100%',
     padding: adjust(10),
     borderRadius: adjust(10),
   },
   labelText: {
     textAlign: 'center',
-    color: '#fff',
+    color: colors.colorWhite,
     fontSize: adjust(14),
   },
   disabledTouch: {

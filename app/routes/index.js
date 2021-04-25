@@ -5,15 +5,17 @@ import App from '../containers/app';
 import Onboard from '../containers/auth';
 import AppDrawer from '../components/drawer';
 import Login from '../containers/auth/login/login';
+import { colors } from '../constants/colors';
 
 const Stack = createStackNavigator();
 
 const AnimeManagerScreens = () => (
   <NavigationContainer
     theme={{
+      dark: false,
       colors: {
-        background: '#F4F3FA',
-        primary: '#111111',
+        background: colors.primaryBackgroundWhite,
+        primary: colors.colorBlack,
       },
     }}
   >

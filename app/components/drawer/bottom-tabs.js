@@ -13,10 +13,12 @@ const BottomTabs = (props) => {
   const { state: { routes = [], index } = {}, navigation } = props;
 
   const allTabs = routes?.map((route, i) => (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View
+      style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+      key={route.params.id}
+    >
       <TouchableOpacity
         style={[styles.iconTouch, i === 1 && styles.middleIconTouch]}
-        key={route.params.id}
         onPress={() => navigation.navigate(route.name)}
       >
         <Image
