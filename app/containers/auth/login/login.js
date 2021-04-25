@@ -33,8 +33,6 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   viewContainer: {
-    // height: '100%',
-    // width: '100%',
     backgroundColor: '#F4F3FA',
     marginTop: adjust(200),
     borderTopLeftRadius: adjust(35),

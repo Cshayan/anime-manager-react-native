@@ -1,7 +1,7 @@
 import React from 'react';
-import { View } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MyDrawer from './drawer';
 import MyBottomTabs from './bottom-tabs';
 import Home from '../../containers/home';
 import SearchAnime from '../../containers/search-anime';
@@ -48,7 +48,7 @@ const BottomTabs = () => (
 const AppDrawer = () => (
   <Drawer.Navigator
     initialRouteName="BottomTabs"
-    drawerContent={(props) => <View {...props}></View>}
+    drawerContent={(props) => <MyDrawer {...props} />}
     drawerPosition="left"
     overlayColor="rgba(0, 0, 0, 0.7)"
   >

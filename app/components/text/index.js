@@ -4,13 +4,22 @@ import { Text } from 'react-native';
 import { adjust } from './adjust';
 
 const TextComp = (props) => {
-  const { children, size, color, fontWeight, align, customStyle } = props;
+  const {
+    children,
+    size,
+    color,
+    fontWeight,
+    align,
+    customStyle,
+    ...rest
+  } = props;
   return (
     <Text
       style={[
         { fontSize: adjust(size), color, fontWeight, textAlign: align },
         customStyle,
       ]}
+      {...rest}
     >
       {children}
     </Text>
