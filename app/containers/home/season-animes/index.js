@@ -4,6 +4,7 @@ import { Text } from '../../../components';
 import { adjust } from '../../../components/text/adjust';
 import SeasonFilters from './filters';
 import SeasonAnimesSwiper from './season-animes-swiper';
+import YearFilterCTA from './year-filter-cta';
 
 const SeasonAnimes = () => (
   <View style={styles.container}>
@@ -11,6 +12,7 @@ const SeasonAnimes = () => (
       <Text align="left" size={16}>
         View animes by season
       </Text>
+      <YearFilterCTA />
     </View>
     <SeasonFilters />
     <SeasonAnimesSwiper />
@@ -20,7 +22,7 @@ const SeasonAnimes = () => (
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: adjust(8),
-    marginTop: adjust(10),
+    marginTop: adjust(15),
   },
   header: {
     flexDirection: 'row',
